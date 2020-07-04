@@ -3,7 +3,7 @@ Docker container that allows you do send emails using REST API
 
 
 ## Templates
-Define your template in `./www/templates`.It should have a `.php` extention, example `template1.php` You can alos pass variables with values to the template.
+Define your template in `./www/templates`.It should have a `.php` extention, example `template1.php` You can also pass variables with values to the template.
 To desplay them in the template you should use php `<?php echo $value;?>`
 
 ## Config

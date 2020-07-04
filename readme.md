@@ -26,6 +26,12 @@ To desplay them in the template you should use php `<?php echo $value;?>`
 #### Namecheap private e-mail
 - mail.privateemail.com  587
 
+## Runing
+```sh
+$ docker-compose up
+```
+
+
 ## Demo
 ```sh
 $ curl -X POST http://127.0.0.1:8080/api/v1/mail?token=123123123 --data '{"email":"myemail@example.com","title":"Welcome to docker-mailer!","template":"notification_template","options":{"value":"SomeValue","value2":"AnotherValue"}}'

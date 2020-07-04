@@ -1,0 +1,22 @@
+# Deny access to .htaccess
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+# Disable directory browsing 
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+ 
+
+RewriteRule ^v([0-9]+)/(.*)/$ index.php?version=$1&resource=$2 [L]
+RewriteRule ^v([0-9]+)/(.*)/(.*)/$ index.php?version=$1&resource=$2&path_parameter=$3 [L]
+
+RewriteRule ^v([0-9]+)/(.*)/(.*)$ index.php?version=$1&resource=$2&path_parameter=$3 [L]
+RewriteRule ^v([0-9]+)/(.*)$ index.php?version=$1&resource=$2 [L]
+
+RewriteRule ^(.*)$ index.php [L]

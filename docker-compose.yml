@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  mail_service:
+    build: ./
+    volumes: 
+      - ./www/:/var/www/html/
+    ports: 
+      - "8080:80"
+    environment: 
+      - TOKEN=123
+      - MAIL_HOST=mail.privateemail.com
+      - MAIL_PORT=587
+      - MAIL_USERNAME=info@example.com
+      - MAIL_PASSWORD=MYEMAILPASSWORD
+      - MAIL_FROM_NAME=Team Name
+      - MAIL_REPLY_ADRESS=no-reply@example.com
